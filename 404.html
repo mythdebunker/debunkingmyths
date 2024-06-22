@@ -8,152 +8,45 @@
     <link rel="icon" href="icon.png" type="image/x-icon">
 </head>
 <style>
-    body {
-    font-family: 'Comic Sans MS', cursive, sans-serif;
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin: 0;
     padding: 0;
-    background-color: #ffe4e1;
-    color: #333;
-    text-align: center;
+    font-family: Arial, sans-serif;
 }
 
 header {
-    background-color: #ff69b4;
-    color: #fff;
-    padding: 2rem 0;
-    font-size: 2.5rem;
-    box-shadow: 0 4px 2px -2px gray;
+    width: 100%;
+    background-color: #ff4500;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 main {
-    padding: 1rem;
+    flex: 1;
+    padding: 2rem;
+    background-color: #ffe4e1;
 }
 
-section {
-    background-color: #f0e68c;
-    border: 2px dashed #ff6347;
-    margin: 2rem 10%;
-    padding: 1rem;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: auto;
-}
-
-.misinfo-message h1 {
-    font-size: 3rem;
-    color: #ff4500;
-    text-shadow: 3px 3px #4b0082;
-    transform: rotate(-10deg);
-    margin: 0;
-    padding: 0 1rem;
-    word-wrap: break-word;
+.misinfo-message {
+    text-align: center;
+    margin-bottom: 2rem;
 }
 
 .user-input-section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 2rem 10%;
-    padding: 1rem;
-    background-color: #ffe4e1;
-}
-
-.user-input-section input {
-    margin-top: 1rem;
-    padding: 0.5rem;
-    font-size: 1rem;
-    border: 2px solid #ff4500;
-    border-radius: 5px;
-}
-
-.user-input-section button {
-    background-color: #ff6347;
-    color: #fff;
-    border: none;
-    padding: 0.5rem 1rem;
-    margin: 1rem;
-    font-size: 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.user-input-section button:hover {
-    background-color: #ff4500;
-}
-
-#generatedLink a {
-    color: #4b0082;
-    font-size: 1.2rem;
-    text-decoration: none;
-}
-
-footer {
-    background-color: #ff69b4;
-    color: #fff;
-    padding: 1rem 0;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-    box-shadow: 0 -4px 2px -2px gray;
-}
-
-/* Media Queries for Mobile Responsiveness */
-@media (max-width: 768px) {
-    header {
-        padding: 1rem 0;
-        font-size: 2rem;
-    }
-
-    section {
-        margin: 1rem 5%;
-        padding: 2rem 1rem;
-    }
-
-    .misinfo-message h1 {
-        font-size: 2rem;
-    }
-
-    .user-input-section input,
-    .user-input-section button {
-        font-size: 0.9rem;
-    }
-
-    footer {
-        padding: 0.5rem 0;
-        font-size: 0.9rem;
-    }
-}
-
-@media (max-width: 480px) {
-    header {
-        font-size: 1.5rem;
-    }
-
-    .misinfo-message h1 {
-        font-size: 1.5rem;
-        transform: none; /* Remove the rotation on very small screens */
-    }
-
-    .user-input-section input,
-    .user-input-section button {
-        font-size: 0.8rem;
-    }
-
-    footer {
-        font-size: 0.8rem;
-    }
-}
-
-.user-input-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 2rem 10%;
-    padding: 1rem;
-    background-color: #ffe4e1;
 }
 
 .user-input-section input {
@@ -198,6 +91,20 @@ footer {
     background-color: #3a006b;
 }
 
+.sidebar {
+    width: 160px;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+footer {
+    width: 100%;
+    background-color: #ff4500;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+}
+
 /* Media Queries for Mobile Responsiveness */
 @media (max-width: 768px) {
     header {
@@ -205,9 +112,14 @@ footer {
         font-size: 2rem;
     }
 
-    section {
-        margin: 1rem 5%;
-        padding: 2rem 1rem;
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    main {
+        width: 100%;
+        padding: 1rem;
     }
 
     .misinfo-message h1 {
@@ -217,6 +129,12 @@ footer {
     .user-input-section input,
     .user-input-section button {
         font-size: 0.9rem;
+    }
+
+    .sidebar {
+        width: 100%;
+        text-align: center;
+        padding: 1rem 0;
     }
 
     footer {
@@ -232,7 +150,6 @@ footer {
 
     .misinfo-message h1 {
         font-size: 1.5rem;
-        transform: none; /* Remove the rotation on very small screens */
     }
 
     .user-input-section input,
