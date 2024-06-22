@@ -11,26 +11,36 @@
     <header>
         <h1>Man, I Love Spreading Misinformation</h1>
     </header>
-    <main>
-        <section>
-            <div class="misinfo-message">
-                <h1>You have been misinformed</h1>
+    <div class="container">
+        <main>
+            <section>
+                <div class="misinfo-message">
+                    <h1>You have been misinformed</h1>
+                </div>
+            </section>
+            <div class="user-input-section">
+                <h2>Get your own misinformation link!</h2>
+                <input type="text" id="userInput" placeholder="e.g. Tom Hanks is gay">
+                <button onclick="generateLink()">Get misinformation link</button>
+                <div id="generatedLinkContainer">
+                    <p id="generatedLink"></p>
+                    <button id="copyButton" onclick="copyToClipboard()" style="display: none;">Copy to Clipboard</button>
+                </div>
             </div>
-        </section>
-        <div class="user-input-section">
-            <h2>Get your own misinformation link!</h2>
-            <input type="text" id="userInput" placeholder="e.g. Tom Hanks is gay">
-            <button onclick="generateLink()">Get misinformation link</button>
-            <div id="generatedLinkContainer">
-                <p id="generatedLink"></p>
-                <button id="copyButton" onclick="copyToClipboard()" style="display: none;">Copy to Clipboard</button>
-            </div>
-        </div>
-    </main>
-    <footer>
-        <p>&copy; MisinformationHub</p>
-    </footer>
-    <script src="script.js"></script>
+        </main>
+        <aside class="sidebar">
+            <script type="text/javascript">
+                atOptions = {
+                    'key' : '675e97a1def15b6209c58bdc36226346',
+                    'format' : 'iframe',
+                    'height' : 600,
+                    'width' : 160,
+                    'params' : {}
+                };
+            </script>
+            <script type="text/javascript" src="//www.topcreativeformat.com/675e97a1def15b6209c58bdc36226346/invoke.js"></script>
+        </aside>
+    </div>
     <script type="text/javascript">
         atOptions = {
             'key' : '675e97a1def15b6209c58bdc36226346',
@@ -41,15 +51,9 @@
         };
     </script>
     <script type="text/javascript" src="//www.topcreativeformat.com/675e97a1def15b6209c58bdc36226346/invoke.js"></script>
-    <script type="text/javascript">
-        atOptions = {
-            'key' : '1e29e4a8ab7d3d4091008a757cb3bd2b',
-            'format' : 'iframe',
-            'height' : 600,
-            'width' : 160,
-            'params' : {}
-        };
-    </script>
-    <script type="text/javascript" src="//www.topcreativeformat.com/1e29e4a8ab7d3d4091008a757cb3bd2b/invoke.js"></script>
+    <footer>
+        <p>&copy; MisinformationHub</p>
+    </footer>
+    <script src="script.js"></script>
 </body>
 </html>
