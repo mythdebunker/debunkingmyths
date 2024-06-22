@@ -25,37 +25,17 @@ section {
     margin: 2rem 10%;
     padding: 1rem;
     border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px; /* Adjust this height as needed */
 }
 
-h1, h2 {
-    margin: 0.5rem 0;
-    color: #4b0082;
-    text-shadow: 2px 2px #ff4500;
-}
-
-p, ul {
-    margin: 0.5rem 0;
-    line-height: 1.6;
-}
-
-ul {
-    padding-left: 1.5rem;
-    text-align: left;
-    margin: 0 auto;
-    display: inline-block;
-}
-
-li {
-    margin: 0.5rem 0;
-    list-style-type: none;
-    position: relative;
-    padding-left: 1.5rem;
-}
-
-li:before {
-    content: "💡";
-    position: absolute;
-    left: 0;
+.misinfo-message h1 {
+    font-size: 3rem;
+    color: #ff4500;
+    text-shadow: 3px 3px #4b0082;
+    transform: rotate(-10deg);
 }
 
 footer {
@@ -81,4 +61,42 @@ button {
 
 button:hover {
     background-color: #ff4500;
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 768px) {
+    header {
+        padding: 1rem 0;
+        font-size: 2rem;
+    }
+
+    section {
+        margin: 1rem 5%;
+        height: auto;
+        padding: 2rem 1rem;
+    }
+
+    .misinfo-message h1 {
+        font-size: 2rem;
+    }
+
+    footer {
+        padding: 0.5rem 0;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        font-size: 1.5rem;
+    }
+
+    .misinfo-message h1 {
+        font-size: 1.5rem;
+        transform: none; /* Remove the rotation on very small screens */
+    }
+
+    footer {
+        font-size: 0.8rem;
+    }
 }
