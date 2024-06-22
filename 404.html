@@ -36,9 +36,10 @@ section {
     padding: 1rem;
     border-radius: 10px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 300px; /* Adjust this height as needed */
+    height: auto;
 }
 
 .misinfo-message h1 {
@@ -51,6 +52,44 @@ section {
     word-wrap: break-word;
 }
 
+.user-input-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem 10%;
+    padding: 1rem;
+    background-color: #ffe4e1;
+}
+
+.user-input-section input {
+    margin-top: 1rem;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 2px solid #ff4500;
+    border-radius: 5px;
+}
+
+.user-input-section button {
+    background-color: #ff6347;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    margin: 1rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.user-input-section button:hover {
+    background-color: #ff4500;
+}
+
+#generatedLink a {
+    color: #4b0082;
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+
 footer {
     background-color: #ff69b4;
     color: #fff;
@@ -59,21 +98,6 @@ footer {
     width: 100%;
     bottom: 0;
     box-shadow: 0 -4px 2px -2px gray;
-}
-
-button {
-    background-color: #ff6347;
-    color: #fff;
-    border: none;
-    padding: 0.5rem 1rem;
-    margin: 0.5rem;
-    font-size: 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #ff4500;
 }
 
 /* Media Queries for Mobile Responsiveness */
@@ -85,12 +109,16 @@ button:hover {
 
     section {
         margin: 1rem 5%;
-        height: auto;
         padding: 2rem 1rem;
     }
 
     .misinfo-message h1 {
         font-size: 2rem;
+    }
+
+    .user-input-section input,
+    .user-input-section button {
+        font-size: 0.9rem;
     }
 
     footer {
@@ -109,6 +137,109 @@ button:hover {
         transform: none; /* Remove the rotation on very small screens */
     }
 
+    .user-input-section input,
+    .user-input-section button {
+        font-size: 0.8rem;
+    }
+
+    footer {
+        font-size: 0.8rem;
+    }
+}
+
+.user-input-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem 10%;
+    padding: 1rem;
+    background-color: #ffe4e1;
+}
+
+.user-input-section input {
+    margin-top: 1rem;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 2px solid #ff4500;
+    border-radius: 5px;
+}
+
+.user-input-section button {
+    background-color: #ff6347;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    margin: 1rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.user-input-section button:hover {
+    background-color: #ff4500;
+}
+
+#generatedLink {
+    margin-top: 1rem;
+}
+
+#copyButton {
+    background-color: #4b0082;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    margin-left: 1rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#copyButton:hover {
+    background-color: #3a006b;
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 768px) {
+    header {
+        padding: 1rem 0;
+        font-size: 2rem;
+    }
+
+    section {
+        margin: 1rem 5%;
+        padding: 2rem 1rem;
+    }
+
+    .misinfo-message h1 {
+        font-size: 2rem;
+    }
+
+    .user-input-section input,
+    .user-input-section button {
+        font-size: 0.9rem;
+    }
+
+    footer {
+        padding: 0.5rem 0;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        font-size: 1.5rem;
+    }
+
+    .misinfo-message h1 {
+        font-size: 1.5rem;
+        transform: none; /* Remove the rotation on very small screens */
+    }
+
+    .user-input-section input,
+    .user-input-section button {
+        font-size: 0.8rem;
+    }
+
     footer {
         font-size: 0.8rem;
     }
@@ -124,6 +255,15 @@ button:hover {
                 <h1>You have been misinformed</h1>
             </div>
         </section>
+        <div class="user-input-section">
+            <h2>Get your own misinformation link!</h2>
+            <input type="text" id="userInput" placeholder="e.g. Tom Hanks is gay">
+            <button onclick="generateLink()">Get misinformation link</button>
+            <div id="generatedLinkContainer">
+                <p id="generatedLink"></p>
+                <button id="copyButton" onclick="copyToClipboard()" style="display: none;">Copy to Clipboard</button>
+            </div>
+        </div>
     </main>
     <footer>
         <p>&copy; MisinformationHub</p>
@@ -131,14 +271,14 @@ button:hover {
     <script src="script.js"></script>
     <script type="text/javascript">
         atOptions = {
-            'key' : '1e29e4a8ab7d3d4091008a757cb3bd2b',
+            'key' : '675e97a1def15b6209c58bdc36226346',
             'format' : 'iframe',
-            'height' : 600,
-            'width' : 160,
+            'height' : 90,
+            'width' : 728,
             'params' : {}
         };
     </script>
-    <script type="text/javascript" src="//www.topcreativeformat.com/1e29e4a8ab7d3d4091008a757cb3bd2b/invoke.js"></script>
+    <script type="text/javascript" src="//www.topcreativeformat.com/675e97a1def15b6209c58bdc36226346/invoke.js"></script>
     <script type="text/javascript">
         atOptions = {
             'key' : '1e29e4a8ab7d3d4091008a757cb3bd2b',
